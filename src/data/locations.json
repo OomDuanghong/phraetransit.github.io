@@ -1,0 +1,38 @@
+{
+    "options": [
+        {
+            "value": "chocolate",
+            "label": "Chocolate"
+        },
+        {
+            "value": "strawberry",
+            "label": "Strawberry"
+        },
+        {
+            "value": "vanilla",
+            "label": "Vanilla"
+        }
+    ],
+    "chocolate": {
+        "id": 0,
+        "name": "Chocolate",
+        "geometry": {
+            "coordinates": [
+                100.13871694636566,
+                18.144229444964907
+            ]
+        },
+        "remark": "Test home"
+    },
+    "strawberry": {
+        "id": 0,
+        "name": "Chocolate",
+        "geometry": {
+            "coordinates": [
+                100.13871694636566,
+                18.144229444964907
+            ]
+        },
+        "remark": "Test home"
+    }
+}

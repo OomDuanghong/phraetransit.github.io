@@ -1,0 +1,595 @@
+.div_firstpage {
+    background-color: rgb(201, 199, 199);
+}
+
+.header_welcome {
+    font-family: 'Serif';
+    font-size: 150px;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 6rem;
+    color: rgb(31, 20, 11);
+}
+
+.div_toPhrae {
+    text-align: right;
+    margin-right: 7rem;
+}
+
+.header_to {
+    font-family: 'Serif';
+    font-size: 100px;
+    font-weight: 400;
+    color: rgb(252, 251, 251);
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    padding-bottom: .6rem;
+}
+
+.header_phrae {
+    font-family: 'Serif';
+    font-size: 125px;
+    font-weight: 700;
+    white-space: nowrap;
+    color: rgb(74, 31, 0);
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 3rem;
+}
+
+.header_pts {
+    font-family: 'Serif';
+    font-size: 150px;
+    font-weight: 700;
+    color: rgb(74, 31, 0);
+}
+
+.imgRoot {
+    width: 100%;
+    height: 700px;
+    border: none;
+    margin: none;
+}
+
+.headerNavigationtitle {
+    border-bottom: 500px;
+    border-width: .3rem;
+    text-align: left;
+    font-family: 'Serif';
+    font-weight: 400;
+    color: rgb(74, 31, 0);
+    margin-left: 10rem;
+}
+
+.headerPhrae {
+    text-align: right;
+    font-family: 'Serif';
+    font-size: 75px;
+    font-weight: 700;
+    color: rgb(74, 31, 0);
+    margin-right: 3rem;
+}
+
+.headerTransit {
+    text-align: right;
+    font-family: 'Serif';
+    font-size: 75px;
+    font-weight: 700;
+    color: rgb(74, 31, 0);
+    margin-right: 8rem;
+}
+
+.headerSelectTypeTitle {
+    text-align: right;
+    font-family: 'Serif';
+    font-size: 50px;
+    font-weight: 500;
+    color: rgb(74, 31, 0);
+    margin-right: 3rem;
+}
+
+.selectType {
+    columns: 2;
+}
+
+.iphone {
+    height: 700px;
+    margin-top: 4rem;
+    margin-left: 16rem;
+}
+
+.clipart {
+    display: none;
+}
+
+.body {
+    background-color: rgb(220, 220, 220);
+}
+
+/* .vehicleType {
+    margin-top: 1rem;
+    align-items: center;
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+} */
+
+.textType {
+    text-align: center;
+    align-items: center;
+    font-family: 'Serif';
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: .2rem;
+}
+
+.typeHover {
+    background-color: beige;
+    width: 400px;
+    height: 125px;
+    border-radius: 50px;
+    text-align: center;
+    font-family: 'Serif';
+    font-size: 35px;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    float: right;
+}
+
+.typeHover2 {
+    background-color: beige;
+    width: 400px;
+    height: 180px;
+    border-radius: 50px;
+    text-align: center;
+    font-family: 'Serif';
+    font-size: 35px;
+    margin-top: 2rem;
+    padding-top: 3rem;
+    float: right;
+}
+
+.type1_2 {
+    margin-top: .45rem;
+    text-align: center;
+    bottom: 50%;
+    background-image: url('../../images/icon-motorcycle.png');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 400px;
+    height: 200px;
+}
+
+.type1:hover {
+    background-image: none;
+    text-align: center;
+    background-image: url('../../images/icon-motorcycle.png');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 400px;
+    height: 200px;
+}
+
+.type3 {
+    text-align: center;
+    background-image: url('../../images/icon-trucktaxi.png');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 400px;
+    height: 200px;
+}
+
+.type3:hover {
+    background-image: none;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 400px;
+    height: 200px;
+}
+
+.type4 {
+    text-align: center;
+    background-image: url('../../images/icon-van.png');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 400px;
+    height: 200px;
+}
+
+.type4:hover {
+    text-align: center;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 400px;
+    height: 200px;
+}
+
+.type5 {
+    text-align: center;
+    background-image: url('../../images/icon-tram.png');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 400px;
+    height: 200px;
+}
+
+.type5:hover {
+    text-align: center;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 400px;
+    height: 200px;
+}
+
+.darkBg {
+    background-color: rgb(201, 199, 199);
+    padding-bottom: 3rem;
+}
+
+.lightBg {
+    padding-bottom: 3rem;
+}
+
+.motorcycle_header {
+    /* background-image: url('/src/images/minimal-bg.avif') ;
+    background-repeat: no-repeat; */
+    background-color: rgb(201, 199, 199);
+    background-size: 1700px;
+    align-items: center;
+    text-align: center;
+}
+
+.tricycle_header {
+    align-items: center;
+    text-align: center;
+}
+
+.trucktaxi_header {
+    padding-top: 3rem;
+    align-items: center;
+    text-align: center;
+}
+
+.lists {
+    padding: 3px;
+}
+
+.pics {
+    margin-top: 5rem;
+    height: 200px;
+}
+
+.pics_trucktaxi {
+    margin-top: 2rem;
+    height: 200px;
+}
+
+.vl {
+    border-left: 3px solid black;
+    height: 150px;
+    margin-left: 50%;
+}
+
+.header_data {
+    font-size: 25px;
+    font-weight: 400;
+    margin-left: 8rem;
+}
+
+.title_data {
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 2rem;
+}
+
+.body_data {
+    margin-left: 40rem;
+    margin-bottom: 2.5rem;
+}
+
+ol {
+    margin-left: 4rem;
+}
+
+.container_markerline {
+    display: flex;
+    width: 700px;
+}
+
+.trucktaxi_map {
+    display: flex;
+    align-items: center;
+}
+
+.blueline {
+    width: 500px;
+}
+
+.mapcontainer {
+    display: 1;
+    width: 800px;
+    height: 500px;
+    text-align: center;
+    align-items: center;
+    border-right: 1px solid #333;
+    border-radius: 5%;
+    margin-top: .8rem;
+    margin-left: 28rem;
+
+}
+
+.selectonmap_div {
+    margin-left: 25rem;
+}
+
+.select_div {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    background-color: #353B57;
+    text-align: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 900px;
+    border-radius: 20px;
+}
+
+.select_label {
+    flex: 1;
+    text-align: center;
+    color: #f4f9f8;
+    padding: .8rem;
+    padding-top: 1rem;
+}
+
+.selection {
+    /* display: flex; */
+    flex: 1;
+    justify-content: space-between;
+    border: none;
+    width: 200px;
+}
+
+.note {
+    text-align: center;
+    color: #553802;
+    /* background-color: #353B57; */
+    padding: .4rem;
+    width: 800px;
+    margin-left: 14rem;
+}
+
+
+
+.marker {
+    background-image: url('');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker1 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-01.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker2 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-02.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker3 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-03.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker4 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-04.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker5 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-05.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker6 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-06.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker7 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-07.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.description_div{
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+.description_title{
+    font-size: 50px;
+    font-weight: 600;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.description_texttime{
+    font-size: 30px;
+    font-weight: 400;
+    margin: auto;
+}
+
+tbody {
+    font-size: 30px;
+    font-weight: 400;
+    margin: auto;
+}
+tr{
+    margin: auto;
+}
+.trheader{
+    font-weight: 600;
+    width: 450px;
+    margin: auto;
+}
+
+td {
+    /* width: 200px; */
+    /* margin: auto; */
+    margin-left: .2rem;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 720px) {
+    .header_welcome {
+        font-family: 'Serif';
+        font-size: 50px;
+        font-weight: 400;
+        text-align: left;
+        margin-left: 1rem;
+        margin-top: .5rem;
+        color: rgb(31, 20, 11);
+    }
+
+    .div_toPhrae {
+        text-align: right;
+        margin-right: 2rem;
+    }
+
+    .header_to {
+        font-family: 'Serif';
+        font-size: 45px;
+        font-weight: 400;
+        color: rgb(252, 251, 251);
+        clear: both;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .header_phrae {
+        font-family: 'Serif';
+        font-size: 45px;
+        font-weight: 700;
+        white-space: nowrap;
+        color: rgb(74, 31, 0);
+        clear: both;
+        display: inline-block;
+        overflow: hidden;
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .header_pts {
+        /* background-color: antiquewhite; */
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        color: rgb(74, 31, 0);
+    }
+
+    .imgRoot {
+        width: 100%;
+        height: 500px;
+    }
+
+    .clipart {
+        background-image: url('/src/images/clipart.png');
+        background-size: 500px;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+    }
+
+    .selectType {
+        columns: 2;
+    }
+
+    .iphone {
+        height: 400px;
+    }
+
+    .vehicleType {
+        align-items: center;
+        clear: both;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .textType {
+        text-align: center;
+        margin-top: .2rem;
+        padding: .5rem;
+        white-space: nowrap;
+    }
+
+    .eachType {
+        text-align: center;
+        /* width: 100%;
+        height: 50px; */
+    }
+
+    .type1 {
+        /* background-image: url('../../images/clipart.png');
+        background-size: 100px; */
+        height: 100px;
+        text-align: center;
+        background-repeat: no-repeat;
+        /* width: 100%;
+        height: 50px; */
+    }
+
+    .type1 :hover {
+        content: "มอเตอร์ไซค์รับจ้าง";
+        background-image: none;
+        background-color: beige;
+        text-align: center;
+        width: 100%;
+        height: 50px;
+        border-radius: 50px;
+    }
+
+}
