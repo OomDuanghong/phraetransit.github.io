@@ -15,9 +15,12 @@ import TruckTaxi from "./components/testHome/TruckTaxi";
 import Hero from "./components/testHome/hero/Hero";
 import PhraeTransit from "./components/Home/PhraeTransit"
 
+
+
 function App() {
   return (
     <>
+    
       {/* This is the alias of BrowserRouter i.e. Router */}
       <Router>
         <Switch>

@@ -12,7 +12,11 @@ import trucktaxi from '../../images/pics-trucktaxi.png'
 import van from '../../images/pics-van.png'
 import tram from '../../images/pics-tram.png'
 import marker from '../../images/icon-marker.png'
-
+import pic_div1 from '../../images/1st-div-pic1.png'
+import pic_div2 from '../../images/1st-div-pic2.png'
+import pic_div3 from '../../images/1st-div-pic3.png'
+import icon_div1 from '../../images/1st-div-icon1.png'
+import icon_div2 from '../../images/1st-div-icon2.png'
 
 var mapboxgl = require('mapbox-gl');
 mapboxgl.accessToken = 'pk.eyJ1IjoicGhyYWUtdHJhbnNpdCIsImEiOiJjbG5wcjhnemwwcnNvMnJxaTNvdG1qbnBwIn0.lkJwWKX7nRwo4qqjcWVmmg';
@@ -22,6 +26,9 @@ const PhraeTransit = () => {
     const [isHovered3, setIsHovered3] = useState(false);
     const [isHovered4, setIsHovered4] = useState(false);
     const [isHovered5, setIsHovered5] = useState(false);
+    const [isHoveredVehicle, setIsHoveredVehicle] = useState(false);
+    const [isHoveredTouristAttraction, setIsHoveredTouristAttraction] = useState(false);
+    const [isHoveredRecLocation, setIsHoveredRecLocation] = useState(false);
     const handleMouseEnter1 = () => {
         setIsHovered1_2(true);
     };
@@ -46,11 +53,30 @@ const PhraeTransit = () => {
     const handleMouseLeave5 = () => {
         setIsHovered5(false);
     };
+    const handleMouseEnterVehicle = () => {
+        setIsHoveredVehicle(true);
+    };
+    const handleMouseLeaveVehicle = () => {
+        setIsHoveredVehicle(false);
+    };
+    const handleMouseEnterTouristAttraction = () => {
+        setIsHoveredTouristAttraction(true);
+    };
+    const handleMouseLeaveTouristAttraction = () => {
+        setIsHoveredTouristAttraction(false);
+    };
+    const handleMouseEnterRecLocation = () => {
+        setIsHoveredRecLocation(true);
+    };
+    const handleMouseLeaveRecLocation = () => {
+        setIsHoveredRecLocation(false);
+    };
 
     const ref1_2 = useRef(null);
     const ref3 = useRef(null);
     const ref4 = useRef(null);
     const ref5 = useRef(null);
+    const refVehicle = useRef(null);
 
     const handleClickOn1_2 = () => {
         ref1_2.current?.scrollIntoView({ behavior: 'smooth' });
@@ -63,6 +89,9 @@ const PhraeTransit = () => {
     };
     const handleClickOn5 = () => {
         ref5.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+    const handleClickOnVehicle = () => {
+        refVehicle.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
     const motorcycles = routes_data.motorcycles.data
@@ -282,11 +311,7 @@ const PhraeTransit = () => {
                             'geometry': {
                                 'type': 'Polygon',
                                 // These coordinates outline Maine.
-                                'coordinates': [
-                                    [
-
-                                    ]
-                                ]
+                                'coordinates': routes_data.truckTaxi.robWiang.route
                             }
                         }
                     });
@@ -309,7 +334,7 @@ const PhraeTransit = () => {
                         'source': 'maine',
                         'layout': {},
                         'paint': {
-                            'line-color': '#000',
+                            'line-color': '#0080ff',
                             'line-width': 3
                         }
                     });
@@ -380,25 +405,111 @@ const PhraeTransit = () => {
     });
 
     return (
-        <div className={styles}>
+        <div className={styles.all} name="viewport" content="width=device-width, initial-scale=1.0">
             <div className={styles.div_firstpage} >
                 <h1 className={styles.header_welcome}>W E L C O M E</h1>
                 <div className={styles.div_toPhrae}>
                     <h1 className={styles.header_to}>to</h1>
                     <h1 className={styles.header_phrae}> PHRAE</h1>
                 </div>
-                <div>
+                {/* <div>
                     <img className={styles.imgRoot} />
                 </div>
                 <div >
                     <div className={styles.clipart}></div>
+                </div> */}
+                <div>
+                    <div className={styles.div_choices_firstpage_odd}
+                        onMouseEnter={handleMouseEnterVehicle}
+                        onMouseLeave={handleMouseLeaveVehicle}
+                        onClick={handleClickOnVehicle}
+                    >
+                        {isHoveredVehicle ?
+                            <div className={styles.div_choices_firstpage_hover}>
+                                <div className={styles.choice_firstpage_Text}>
+                                    <h1 className={styles.text_choice}>การเดินทาง</h1>
+                                    <img className={styles.div_choices_icon} src={icon_div1} alt="/" />
+                                    <h1 className={styles.text_order}>1</h1>
+                                </div>
+                                <div className={styles.choice_firstpage_img_div}>
+                                    <img className={styles.choice_firstpage_img} src={pic_div1} alt="/" />
+                                </div>
+                            </div> :
+                            <div className={styles.div_choices_firstpage_odd}>
+                                <div className={styles.choice_firstpage_Text} >
+                                    <h1 className={styles.text_choice}>การเดินทาง</h1>
+                                    <img className={styles.div_choices_icon} src={icon_div1} alt="/" />
+                                    <h1 className={styles.text_order}>1</h1>
+                                </div>
+                                <div className={styles.choice_firstpage_img_div}>
+                                    <img className={styles.choice_firstpage_img} src={pic_div1} alt="/" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div className={styles.div_choices_firstpage_even}
+                        onMouseEnter={handleMouseEnterTouristAttraction}
+                        onMouseLeave={handleMouseLeaveTouristAttraction}
+                    // onClick={handleClickOnVehicle}
+                    >
+                        {isHoveredTouristAttraction ?
+                            <div className={styles.div_choices_firstpage_hover}>
+                                <div className={styles.choice_firstpage_img_div}>
+                                    <img className={styles.choice_firstpage_img} src={pic_div2} alt="/" />
+                                </div>
+                                <div className={styles.choice_firstpage_Text} >
+                                    <h1 className={styles.text_order}>2</h1>
+                                    <h1 className={styles.text_choice}>สถานที่ท่องเที่ยว</h1>
+                                </div>
+                            </div> :
+                            <div className={styles.div_choices_firstpage_even}>
+                                <div className={styles.choice_firstpage_img_div}>
+                                    <img className={styles.choice_firstpage_img} src={pic_div2} alt="/" />
+                                </div>
+                                <div className={styles.choice_firstpage_Text} >
+                                    <h1 className={styles.text_order}>2</h1>
+                                    <h1 className={styles.text_choice}>สถานที่ท่องเที่ยว</h1>      
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                    <div
+                        className={styles.div_choices_firstpage_odd}
+                        onMouseEnter={handleMouseEnterRecLocation}
+                        onMouseLeave={handleMouseLeaveRecLocation}
+                    // onClick={handleClickOnVehicle}
+                    >
+                        {isHoveredRecLocation ?
+                            <div className={styles.div_choices_firstpage_hover}>
+                                <div className={styles.choice_firstpage_Text}>
+                                    <h1 className={styles.text_choice}>ของดีเมืองแพร่</h1>
+                                    <img className={styles.div_choices_icon} src={icon_div2} alt="/" />
+                                    <h1 className={styles.text_order}>3</h1>
+                                </div>
+                                <div className={styles.choice_firstpage_img_div}>
+                                    <img className={styles.choice_firstpage_img} src={pic_div3} alt="/" />
+                                </div>
+                            </div> :
+                            <div className={styles.div_choices_firstpage_odd}>
+                                <div className={styles.choice_firstpage_Text}>
+                                    <h1 className={styles.text_choice}>ของดีเมืองแพร่</h1>
+                                    <img className={styles.div_choices_icon} src={icon_div2} alt="/" />
+                                    <h1 className={styles.text_order}>3</h1>
+                                </div>
+                                <div className={styles.choice_firstpage_img_div}>
+                                    <img className={styles.choice_firstpage_img} src={pic_div3} alt="/" />
+                                </div>
+                            </div>
+                        }
+                    </div>
                 </div>
             </div>
-            <div id='selectType'>
+            <div ref={refVehicle} id='selectType'>
                 <div>
                     <div>
-                        <h1 className={styles.headerPhrae}>________________PHRAE TRANSIT</h1>
-                        <h1 className={styles.headerSelectTypeTitle}>____________________เลือกประเภทรถ________________</h1>
+                        <h1 className={styles.headerPhrae}>PHRAE TRANSIT</h1>
+                        <h1 className={styles.headerSelectTypeTitle}>เลือกประเภทรถ</h1>
                     </div>
                 </div>
                 <div className={styles.selectType}>
@@ -413,8 +524,8 @@ const PhraeTransit = () => {
                             >
                                 {isHovered1_2 ?
                                     <div onClick={handleClickOn1_2} className={styles.typeHover2}>
-                                        <h4>มอเตอร์ไซค์รับจ้าง</h4>
-                                        <h4>รถสามล้อปั่น</h4>
+                                        <h4 className={styles.thai_font}>มอเตอร์ไซค์รับจ้าง</h4>
+                                        <h4 className={styles.thai_font}>รถสามล้อปั่น</h4>
                                     </div> :
                                     <div className={styles.type1_2}></div>
                                 }
@@ -426,7 +537,7 @@ const PhraeTransit = () => {
                             >
                                 {isHovered3 ?
                                     <div onClick={handleClickOn3} className={styles.typeHover}>
-                                        <h4 >รถสองแถว</h4>
+                                        <h4 className={styles.thai_font}>รถสองแถว</h4>
                                     </div> :
                                     <div className={styles.type3}></div>
                                 }
@@ -450,7 +561,7 @@ const PhraeTransit = () => {
                             >
                                 {isHovered5 ?
                                     <div onClick={handleClickOn3} className={styles.typeHover}>
-                                        <h4>รถรางนำเที่ยว</h4>
+                                        <h4 className={styles.thai_font}>รถรางนำเที่ยว</h4>
                                     </div> :
                                     <div className={styles.type5}></div>
                                 }
@@ -464,21 +575,11 @@ const PhraeTransit = () => {
                 <div className={styles.motorcycle_header}>
                     <img className={styles.pics} src={motorcycle} alt="" />
                     <div className={styles.vl}></div>
-                    <h1>มอเตอร์ไซค์รับจ้าง</h1>
+                    <h1 className={styles.thai_font}>มอเตอร์ไซค์รับจ้าง</h1>
                 </div>
                 <div>
                     <p className={styles.header_data}>จุดให้บริการ</p>
                     <div className={styles.body_data}>
-                        {/* <div className={styles.container_markerline}>
-                            <div className={styles.side}>
-                                <img className={styles.marker} alt="marker" src={marker} />
-                            </div>
-                            <div className={`${styles.side_content_center}`}>
-                                <div>
-                                    <p className={styles.title_data}>บขส.แพร่ : รอบเมือง (ปะยางรอบเมือง)</p>
-                                </div>
-                            </div>
-                        </div> */}
                         {motorcycles.map((_motorcycle) => (
                             <div>
                                 <p className={styles.title_data}>{_motorcycle.typeName}</p>
@@ -496,7 +597,7 @@ const PhraeTransit = () => {
                 <div className={styles.tricycle_header}>
                     <img className={styles.pics} src={tricycle} alt="" />
                     <div className={styles.vl}></div>
-                    <h1>รถสามล้อปั่น</h1>
+                    <h1 className={styles.thai_font}>รถสามล้อปั่น</h1>
                 </div>
                 <div>
                     <p className={styles.header_data}>จุดให้บริการ</p>
@@ -516,7 +617,7 @@ const PhraeTransit = () => {
             </div >
             <div ref={ref3} className={`${styles.darkBg}`} id='trucktaxi-and-tram'>
                 <div className={styles.trucktaxi_header}>
-                    <h1>เส้นทางการเดินรถ</h1>
+                    <h1 className={styles.thai_font}>เส้นทางการเดินรถ</h1>
                     {/* <h1>สองแถว</h1> */}
                     <img className={styles.pics_trucktaxi} src={trucktaxi} alt="" />
                 </div>
@@ -534,7 +635,7 @@ const PhraeTransit = () => {
                         <div className={styles.selection}>
                             <label className={styles.select_label}>เลือกสายรถ:</label>
                             <select className={styles.selection} value={key} onChange={handleChangeRoute}>
-                                <option value="default">เลือกสายของรถสองแถวที่ต้องการ</option>
+                                <option className={styles.thai_font} value="default">เลือกสายของรถสองแถวที่ต้องการ</option>
                                 {route_lists.map((list) => (
                                     <option className={styles.lists} value={list.id}> {list.name}</option>
                                 ))}
@@ -543,6 +644,10 @@ const PhraeTransit = () => {
                     </div>
                     {/* <h6 className={`${styles.note}`}>{note}</h6> */}
                 </div>
+                <div className={styles.trucktaxi_map}>
+                    <div ref={mapContainer} className={styles.mapcontainer} />
+                </div>
+                <h6 className={`${styles.note}`}>{note}</h6>
                 <div className={styles.description_div}>
                     <h1 className={styles.description_title}>{title_route}</h1>
                     <h1 className={styles.description_texttime}>เวลาที่ให้บริการ :</h1>
@@ -550,35 +655,24 @@ const PhraeTransit = () => {
                         {time_service.length > 0 ? (
                             <table className={styles.description_texttime}>
                                 <tbody>
-                                    {/* <tr className={styles.trheader}> */}
-                                    {/* <td> </td> */}
-                                    {/* <td>เวลาที่ให้บริการ</td> */}
-                                    {/* <td>เวลากลับ</td> */}
-                                    {/* </tr> */}
                                     {time_service.map((time, i) => (
                                         <tr>
-                                            {/* <td>{i+1}.</td> */}
                                             <td>{i + 1}.   {time}</td>
-                                            {/* <td>{time_return[i]}</td> */}
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
                         ) : time_service.length == 0 ? (
-                            <div>
+                            <div className={styles.thai_font}>
                                 ไม่พบข้อมูลเส้นทางเดินรถที่ต้องการ
                             </div>
                         ) : (
-                            <div>
+                            <div className={styles.thai_font}>
                                 ไม่พบข้อมูลเส้นทางการเดินรถกรุณาเลือกเส้นทางการเดินรถให้ถูกต้อง
                             </div>
                         )}
                     </div>
                 </div>
-                <div className={styles.trucktaxi_map}>
-                    <div ref={mapContainer} className={styles.mapcontainer} />
-                </div>
-                <h6 className={`${styles.note}`}>{note}</h6>
             </div >
         </div >
     )

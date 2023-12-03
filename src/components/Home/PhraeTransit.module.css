@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@200;300;400;700&family=PT+Serif:wght@400;700&display=swap');
+
 .div_firstpage {
     background-color: rgb(201, 199, 199);
+}
+
+.all {
+    align-items: center;
 }
 
 .header_welcome {
@@ -53,14 +59,93 @@
     margin: none;
 }
 
-.headerNavigationtitle {
+.div_choices_firstpage_hover {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    margin: 50px;
+    padding: auto;
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    background-color: #fcead1;
+}
+
+.div_choices_firstpage_odd {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    margin: 50px;
+    padding: auto;
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    background-color: #f4f9f8;
+}
+
+.div_choices_firstpage_even {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    text-align: center;
+    /* background-color: #d2d5d4; */
+}
+
+.choice_firstpage_Text {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    margin: auto;
+    width: 100%;
+    align-items: center;
+}
+
+.choice_firstpage_img_div {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    margin-left: auto;
+    /* margin-right: 7rem; */
+    width: 100%;
+    align-items: center;
+}
+
+.choice_firstpage_img {
+    height: 450px;
+    transform: rotate(10deg);
+    margin-left: 10rem;
+    /* position: absolute; */
+}
+
+.text_choice {
     border-bottom: 500px;
     border-width: .3rem;
     text-align: left;
-    font-family: 'Serif';
+    font-family: 'Noto Sans Thai', sans-serif;
     font-weight: 400;
-    color: rgb(74, 31, 0);
+    font-size: 55px;
+    color: rgb(9, 9, 8);
     margin-left: 10rem;
+}
+
+.text_order {
+    border-bottom: 500px;
+    border-width: .3rem;
+    text-align: left;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 110px;
+    color: rgb(10, 10, 10);
+    margin-left: 10rem;
+}
+
+.div_choices_icon {
+    height: 150px;
+    margin: 1rem;
 }
 
 .headerPhrae {
@@ -68,26 +153,25 @@
     font-family: 'Serif';
     font-size: 75px;
     font-weight: 700;
-    color: rgb(74, 31, 0);
-    margin-right: 3rem;
-}
-
-.headerTransit {
-    text-align: right;
-    font-family: 'Serif';
-    font-size: 75px;
-    font-weight: 700;
-    color: rgb(74, 31, 0);
-    margin-right: 8rem;
+    color: rgb(252, 235, 222);
+    margin-right: 9rem;
+    background-color: rgb(74, 31, 0);
+    padding-right: 15px;
 }
 
 .headerSelectTypeTitle {
     text-align: right;
-    font-family: 'Serif';
+    font-family: 'Noto Sans Thai', sans-serif;
     font-size: 50px;
     font-weight: 500;
-    color: rgb(74, 31, 0);
-    margin-right: 3rem;
+    color: rgb(252, 235, 222);
+    margin-right: 9rem;
+    padding-right: 15px;
+    background-color: rgb(74, 31, 0);
+}
+
+.thai_font {
+    font-family: 'Noto Sans Thai', sans-serif;
 }
 
 .selectType {
@@ -108,30 +192,13 @@
     background-color: rgb(220, 220, 220);
 }
 
-/* .vehicleType {
-    margin-top: 1rem;
-    align-items: center;
-    clear: both;
-    display: inline-block;
-    overflow: hidden;
-} */
-
-.textType {
-    text-align: center;
-    align-items: center;
-    font-family: 'Serif';
-    font-size: 45px;
-    font-weight: 400;
-    margin-top: .2rem;
-}
-
 .typeHover {
     background-color: beige;
     width: 400px;
     height: 125px;
     border-radius: 50px;
     text-align: center;
-    font-family: 'Serif';
+    font-family: 'Noto Sans Thai', sans-serif;
     font-size: 35px;
     margin-top: 4rem;
     padding-top: 2.5rem;
@@ -144,7 +211,7 @@
     height: 180px;
     border-radius: 50px;
     text-align: center;
-    font-family: 'Serif';
+    font-family: 'Noto Sans Thai', sans-serif;
     font-size: 35px;
     margin-top: 2rem;
     padding-top: 3rem;
@@ -236,8 +303,6 @@
 }
 
 .motorcycle_header {
-    /* background-image: url('/src/images/minimal-bg.avif') ;
-    background-repeat: no-repeat; */
     background-color: rgb(201, 199, 199);
     background-size: 1700px;
     align-items: center;
@@ -257,6 +322,7 @@
 
 .lists {
     padding: 3px;
+    font-family: 'Noto Sans Thai', sans-serif;
 }
 
 .pics {
@@ -279,6 +345,7 @@
     font-size: 25px;
     font-weight: 400;
     margin-left: 8rem;
+    font-family: 'Noto Sans Thai', sans-serif;
 }
 
 .title_data {
@@ -290,6 +357,7 @@
 .body_data {
     margin-left: 40rem;
     margin-bottom: 2.5rem;
+    font-family: 'Noto Sans Thai', sans-serif;
 }
 
 ol {
@@ -341,6 +409,7 @@ ol {
 }
 
 .select_label {
+    font-family: 'Noto Sans Thai', sans-serif;
     flex: 1;
     text-align: center;
     color: #f4f9f8;
@@ -354,9 +423,11 @@ ol {
     justify-content: space-between;
     border: none;
     width: 200px;
+    font-family: 'Noto Sans Thai', sans-serif;
 }
 
 .note {
+    font-family: 'Noto Sans Thai', sans-serif;
     text-align: center;
     color: #553802;
     /* background-color: #353B57; */
@@ -364,8 +435,6 @@ ol {
     width: 800px;
     margin-left: 14rem;
 }
-
-
 
 .marker {
     background-image: url('');
@@ -439,22 +508,25 @@ ol {
     cursor: pointer;
 }
 
-.description_div{
+.description_div {
     align-items: center;
     text-align: center;
     margin: auto;
 }
-.description_title{
+
+.description_title {
     font-size: 50px;
     font-weight: 600;
+    font-family: 'Noto Sans Thai', sans-serif;
     margin: auto;
     margin-top: 1rem;
 }
 
-.description_texttime{
+.description_texttime {
     font-size: 30px;
     font-weight: 400;
     margin: auto;
+    font-family: 'Noto Sans Thai', sans-serif;
 }
 
 tbody {
@@ -462,10 +534,12 @@ tbody {
     font-weight: 400;
     margin: auto;
 }
-tr{
+
+tr {
     margin: auto;
 }
-.trheader{
+
+.trheader {
     font-weight: 600;
     width: 450px;
     margin: auto;
@@ -478,9 +552,6 @@ td {
     font-weight: 600;
     font-size: 40px;
 }
-
-
-
 
 
 
@@ -590,6 +661,239 @@ td {
         width: 100%;
         height: 50px;
         border-radius: 50px;
+    }
+
+    .div_firstpage {
+        background-image: url('../../images/root_mobile.png');
+        background-repeat: no-repeat;
+        margin: auto;
+    }
+
+    .div_choices_firstpage_hover {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+        margin: .8rem;
+        background-color: transparent;
+    }
+
+    .div_choices_firstpage_odd {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+        margin: .8rem;
+        background-color: transparent;
+    }
+
+    .div_choices_firstpage_even {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+    }
+
+    .choice_firstpage_Text {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: row;
+        margin: auto;
+        align-items: center;
+    }
+
+    .choice_firstpage_img_div {
+        display: none;
+    }
+
+    .choice_firstpage_img {
+        display: none;
+    }
+
+    .text_choice {
+        text-align: left;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-weight: 400;
+        font-size: 30px;
+        color: rgb(9, 9, 8);
+        margin-left: 1rem;
+    }
+
+    .text_order {
+        text-align: left;
+        font-family: 'PT Serif', serif;
+        font-weight: 700;
+        /* font-size: 50px; */
+        color: rgb(10, 10, 10);
+        margin-left: 1rem;
+    }
+
+    .div_choices_icon {
+        height: 100px;
+    }
+
+    .headerPhrae {
+        text-align: center;
+        font-family: 'Serif';
+        font-size: 75px;
+        font-weight: 700;
+        color: rgb(74, 31, 0);
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+    }
+
+    .headerSelectTypeTitle {
+        text-align: center;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-size: 50px;
+        font-weight: 500;
+        color: rgb(252, 235, 222);
+        background-color: rgb(74, 31, 0);
+        margin: 0;
+        padding: 0;
+    }
+
+    .iphone {
+        height: 400px;
+        margin-top: 4rem;
+        margin-left: 0;
+    }
+
+    .type1_2 {
+        margin-top: .45rem;
+        text-align: center;
+        bottom: 50%;
+        background-image: url('../../images/icon-motorcycle.png');
+        background-repeat: no-repeat;
+        background-size: 150px;
+        width: 400px;
+        height: 200px;
+    }
+
+    .type1:hover {
+        background-image: none;
+        text-align: center;
+        background-image: url('../../images/icon-motorcycle.png');
+        background-repeat: no-repeat;
+        background-size: 50px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .typeHover2 {
+        background-color: beige;
+        width: 200px;
+        height: 120px;
+        border-radius: 50px;
+        text-align: center;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-size: 25px;
+        margin-left: 0;
+        margin-top: .8rem;
+        padding-top: 1.8rem;
+        float: left;
+    }
+
+    .typeHover {
+        background-color: beige;
+        width: 200px;
+        height: 120px;
+        border-radius: 50px;
+        text-align: center;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-size: 30px;
+        margin-top: .8rem;
+        padding-top: 2.5rem;
+        float: left;
+    }
+
+    .body_data {
+        margin-left: 1rem;
+        margin-bottom: 2.5rem;
+        font-family: 'Noto Sans Thai', sans-serif;
+    }
+
+    .selectonmap_div {
+        margin: auto;
+    }
+
+    .select_div {
+        display: block;
+        flex: auto;
+        flex-direction: row;
+        background-color: #353B57;
+        text-align: center;
+        align-items: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin: auto;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .select_label {
+        font-family: 'Noto Sans Thai', sans-serif;
+        flex: 1;
+        text-align: center;
+        color: #f4f9f8;
+        padding: .8rem;
+        padding-top: 1rem;
+    }
+
+    .selection {
+        /* display: flex; */
+        flex: 1;
+        justify-content: space-between;
+        border: none;
+        width: 350px;
+        font-family: 'Noto Sans Thai', sans-serif;
+        margin-left: .8rem;
+    }
+
+    .dropdown_menu{
+        display: inline;
+        overflow: visible;
+        position:initial;
+    }
+
+    .container_markerline {
+        display: flex;
+        width: 700px;
+    }
+
+    .trucktaxi_map {
+        display: flex;
+        align-items: center;
+    }
+
+    .blueline {
+        width: 500px;
+    }
+
+    .mapcontainer {
+        display: 1;
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        align-items: center;
+        border-right: 1px solid #333;
+        border: 1px solid #333;
+        border-radius: 0;
+        margin-top: .8rem;
+        margin-left: .4rem;
+
+    }
+
+    .description_title {
+        font-size: 60px;
+        font-weight: 600;
+        font-family: 'Noto Sans Thai', sans-serif;
+        margin: auto;
+        margin-top: 1rem;
     }
 
 }
