@@ -876,7 +876,7 @@ td {
 
     .mapcontainer {
         display: 1;
-        width: 100%;
+        max-width: 500px;
         height: 400px;
         text-align: center;
         align-items: center;
