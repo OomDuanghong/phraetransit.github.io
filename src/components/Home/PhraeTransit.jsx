@@ -14,6 +14,7 @@ import icon_div2 from '../../images/1st-div-icon2.png'
 
 var mapboxgl = require('mapbox-gl');
 mapboxgl.accessToken = 'pk.eyJ1IjoicGhyYWUtdHJhbnNpdCIsImEiOiJjbG5wcjhnemwwcnNvMnJxaTNvdG1qbnBwIn0.lkJwWKX7nRwo4qqjcWVmmg';
+// mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 const PhraeTransit = () => {
     const [isHovered1_2, setIsHovered1_2] = useState(false);

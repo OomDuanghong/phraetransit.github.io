@@ -884,8 +884,7 @@ td {
         border: 1px solid #333;
         border-radius: 0;
         margin-top: .8rem;
-        margin-left: .4rem;
-        
+        margin-left: 0;
     }
 
     .description_title {
@@ -903,6 +902,6 @@ td {
         /* background-color: #353B57; */
         padding: .4rem;
         width: 100%;
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
 }
