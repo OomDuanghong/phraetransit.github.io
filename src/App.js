@@ -2,17 +2,16 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect
+  Route
 } from "react-router-dom";
 
 // import Home component 
-import FirstPage from "./components/testHome/FirstPage";
-import Home from "./components/testHome/Home";
-import MapsPage from "./components/testHome/MapsPage";
-import Tram from "./components/testHome/Tram";
-import TruckTaxi from "./components/testHome/TruckTaxi";
-import Hero from "./components/testHome/hero/Hero";
+// import FirstPage from "./components/testHome/FirstPage";
+// import Home from "./components/testHome/Home";
+// import MapsPage from "./components/testHome/MapsPage";
+// import Tram from "./components/testHome/Tram";
+// import TruckTaxi from "./components/testHome/TruckTaxi";
+// import Hero from "./components/testHome/hero/Hero";
 import PhraeTransit from "./components/Home/PhraeTransit"
 
 

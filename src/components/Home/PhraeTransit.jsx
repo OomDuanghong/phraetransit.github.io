@@ -1,17 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
-// import { View, Text, Image } from 'react-native'
-import { AiOutlineMenu, AiOutlineClose, AiOutlineSearch, AiOutlineUser } from 'react-icons/ai'
 import styles from '../Home/PhraeTransit.module.css'
 import routes_data from '../../data/boardingPoint.json'
 
-import clipart from '../../images/clipart.png'
 import iphone from '../../images/iphone.png'
 import motorcycle from '../../images/pics-motorcycle.png'
 import tricycle from '../../images/pics-tricycle.png'
 import trucktaxi from '../../images/pics-trucktaxi.png'
-import van from '../../images/pics-van.png'
-import tram from '../../images/pics-tram.png'
-import marker from '../../images/icon-marker.png'
 import pic_div1 from '../../images/1st-div-pic1.png'
 import pic_div2 from '../../images/1st-div-pic2.png'
 import pic_div3 from '../../images/1st-div-pic3.png'
@@ -24,7 +18,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicGhyYWUtdHJhbnNpdCIsImEiOiJjbG5wcjhnemwwcnNvM
 const PhraeTransit = () => {
     const [isHovered1_2, setIsHovered1_2] = useState(false);
     const [isHovered3, setIsHovered3] = useState(false);
-    const [isHovered4, setIsHovered4] = useState(false);
+    // const [isHovered4, setIsHovered4] = useState(false);
     const [isHovered5, setIsHovered5] = useState(false);
     const [isHoveredVehicle, setIsHoveredVehicle] = useState(false);
     const [isHoveredTouristAttraction, setIsHoveredTouristAttraction] = useState(false);
@@ -41,12 +35,12 @@ const PhraeTransit = () => {
     const handleMouseLeave3 = () => {
         setIsHovered3(false);
     };
-    const handleMouseEnter4 = () => {
-        setIsHovered4(true);
-    };
-    const handleMouseLeave4 = () => {
-        setIsHovered4(false);
-    };
+    // const handleMouseEnter4 = () => {
+    //     setIsHovered4(true);
+    // };
+    // const handleMouseLeave4 = () => {
+    //     setIsHovered4(false);
+    // };
     const handleMouseEnter5 = () => {
         setIsHovered5(true);
     };
@@ -74,8 +68,8 @@ const PhraeTransit = () => {
 
     const ref1_2 = useRef(null);
     const ref3 = useRef(null);
-    const ref4 = useRef(null);
-    const ref5 = useRef(null);
+    // const ref4 = useRef(null);
+    // const ref5 = useRef(null);
     const refVehicle = useRef(null);
 
     const handleClickOn1_2 = () => {
@@ -84,12 +78,12 @@ const PhraeTransit = () => {
     const handleClickOn3 = () => {
         ref3.current?.scrollIntoView({ behavior: 'smooth' });
     };
-    const handleClickOn4 = () => {
-        ref4.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-    const handleClickOn5 = () => {
-        ref5.current?.scrollIntoView({ behavior: 'smooth' });
-    };
+    // const handleClickOn4 = () => {
+    //     ref4.current?.scrollIntoView({ behavior: 'smooth' });
+    // };
+    // const handleClickOn5 = () => {
+    //     ref5.current?.scrollIntoView({ behavior: 'smooth' });
+    // };
     const handleClickOnVehicle = () => {
         refVehicle.current?.scrollIntoView({ behavior: 'smooth' });
     };
@@ -152,37 +146,37 @@ const PhraeTransit = () => {
     let route_lists = []
     let isHaveRobWiang = false
     let note = "*Click ที่หมุดของสถานที่บนเส้นทางเดินรถเพื่อดูข้อมูลเพิ่มเติม"
-    let description = ""
+    // let description = ""
     let geojsonData = []
-    let robWiang = routes_data.truckTaxi.robWiang.route
+    // let robWiang = routes_data.truckTaxi.robWiang.route
     let title_route = ""
-    let description_route = ""
+    // let description_route = ""
     let time_service = []
 
-    if (value == 'tram') {
+    if (value === 'tram') {
         route_lists = routes_data.tram
         isHaveRobWiang = false
-    } else if (value == 'trucktaxi1') {
+    } else if (value === 'trucktaxi1') {
         route_lists = routes_data.truckTaxi.sai1
         isHaveRobWiang = true
-    } else if (value == 'trucktaxi4') {
+    } else if (value === 'trucktaxi4') {
         route_lists = routes_data.truckTaxi.sai4
         isHaveRobWiang = false
     } else {
         route_lists = routes_data.default
     }
 
-    if (key && key !== 'default' && value == 'tram') {
+    if (key && key !== 'default' && value === 'tram') {
         title_route = `เส้นทางเดินรถ ${route_lists.find(data => data.id === key).name}`;
-        description_route = route_lists.find(data => data.id === key).description;
+        // description_route = route_lists.find(data => data.id === key).description;
         time_service = route_lists.find(data => data.id === key).time;
-    } else if (key && key !== 'default' && value == 'trucktaxi1') {
+    } else if (key && key !== 'default' && value === 'trucktaxi1') {
         title_route = `เส้นทางเดินรถหมวดที่ 1 ${route_lists.find(data => data.id === key).name}`;
-        description_route = route_lists.find(data => data.id === key).description;
+        // description_route = route_lists.find(data => data.id === key).description;
         time_service = route_lists.find(data => data.id === key).time;
-    } else if (key && key !== 'default' && value == 'trucktaxi4') {
+    } else if (key && key !== 'default' && value === 'trucktaxi4') {
         title_route = `เส้นทางเดินรถหมวดที่ 4 ${route_lists.find(data => data.id === key).name}`;
-        description_route = route_lists.find(data => data.id === key).description;
+        // description_route = route_lists.find(data => data.id === key).description;
         time_service = route_lists.find(data => data.id === key).time;
     }
 
@@ -208,7 +202,7 @@ const PhraeTransit = () => {
             showUserHeading: true
         }));
 
-        if (key && key !== 'default' && value == 'tram') {
+        if (key && key !== 'default' && value === 'tram') {
             let count = 1
             for (const feature of geojsonData.features) {
                 // make a marker for each feature and add to the map
@@ -263,7 +257,7 @@ const PhraeTransit = () => {
                 map.current.setZoom(14)
             });
         }
-        else if (key && key !== 'default' && isHaveRobWiang == true) {
+        else if (key && key !== 'default' && isHaveRobWiang === true) {
             // geojsonData = route_lists.find(data => data.id === key);
             for (const feature of geojsonData.features) {
                 // make a marker for each feature and add to the map
@@ -302,7 +296,7 @@ const PhraeTransit = () => {
                         'line-width': 8
                     }
                 })
-                if (isHaveRobWiang == true) {
+                if (isHaveRobWiang === true) {
                     // Add a data source containing GeoJSON data.
                     map.current.addSource('maine', {
                         'type': 'geojson',
@@ -341,7 +335,7 @@ const PhraeTransit = () => {
                 }
                 map.current.setZoom(10)
             });
-        } else if (key && key !== 'default' && isHaveRobWiang == false) {
+        } else if (key && key !== 'default' && isHaveRobWiang === false) {
             // geojsonData = route_lists.find(data => data.id === key);
             for (const feature of geojsonData.features) {
                 // make a marker for each feature and add to the map
@@ -662,7 +656,7 @@ const PhraeTransit = () => {
                                     ))}
                                 </tbody>
                             </table>
-                        ) : time_service.length == 0 ? (
+                        ) : time_service.length === 0 ? (
                             <div className={styles.thai_font}>
                                 ไม่พบข้อมูลเส้นทางเดินรถที่ต้องการ
                             </div>
