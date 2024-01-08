@@ -12,7 +12,11 @@ import {
 // import Tram from "./components/testHome/Tram";
 // import TruckTaxi from "./components/testHome/TruckTaxi";
 // import Hero from "./components/testHome/hero/Hero";
-import PhraeTransit from "./components/Home/PhraeTransit"
+import PhraeTransit from "./components/Home/PhraeTransit";
+import locationsPage from './components/locations/Locations'
+import templesPage from './components/temples/Temples'
+import famousThingsPage from './components/famousThings/FamousThings'
+
 
 
 
@@ -32,6 +36,9 @@ function App() {
           {/* <Route exact path="/" component={TruckTaxi} /> */}
           {/* <Route exact path="/" component={Hero} /> */}
           <Route exact path="/" component={PhraeTransit} />
+          <Route exact path="/locations" component={locationsPage} />
+          <Route exact path="/temples" component={templesPage} />
+          <Route exact path="/famousThings" component={famousThingsPage} />
 
           {/* This route is for home component  
 with exact path "/", in component props  

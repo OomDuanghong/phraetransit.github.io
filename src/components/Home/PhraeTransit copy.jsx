@@ -1,6 +1,4 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { MDBRipple } from 'mdb-react-ui-kit'
-import { useHistory } from "react-router-dom";
 import styles from '../Home/PhraeTransit.module.css'
 import routes_data from '../../data/boardingPoint.json'
 
@@ -13,15 +11,12 @@ import pic_div2 from '../../images/1st-div-pic2.png'
 import pic_div3 from '../../images/1st-div-pic3.png'
 import icon_div1 from '../../images/1st-div-icon1.png'
 import icon_div2 from '../../images/1st-div-icon2.png'
-import pics_tram from '../../images/pics-tram.png'
-import { hover } from '@testing-library/user-event/dist/hover';
 
 var mapboxgl = require('mapbox-gl');
 mapboxgl.accessToken = 'pk.eyJ1IjoicGhyYWUtdHJhbnNpdCIsImEiOiJjbG5wcjhnemwwcnNvMnJxaTNvdG1qbnBwIn0.lkJwWKX7nRwo4qqjcWVmmg';
 // mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
-const PhraeTransit = () => {
-    const history = useHistory();
+const PhraeTransitxx = () => {
     const [isHovered1_2, setIsHovered1_2] = useState(false);
     const [isHovered3, setIsHovered3] = useState(false);
     // const [isHovered4, setIsHovered4] = useState(false);
@@ -29,9 +24,6 @@ const PhraeTransit = () => {
     const [isHoveredVehicle, setIsHoveredVehicle] = useState(false);
     const [isHoveredTouristAttraction, setIsHoveredTouristAttraction] = useState(false);
     const [isHoveredRecLocation, setIsHoveredRecLocation] = useState(false);
-    const [isHoveredLocations, setIsHoveredLocations] = useState(false);
-    const [isHoveredTemples, setIsHoveredTemples] = useState(false);
-    const [isHoveredFamous, setIsHoveredFamous] = useState(false);
     const handleMouseEnter1 = () => {
         setIsHovered1_2(true);
     };
@@ -74,33 +66,12 @@ const PhraeTransit = () => {
     const handleMouseLeaveRecLocation = () => {
         setIsHoveredRecLocation(false);
     };
-    const handleMouseEnterLocations = () => {
-        setIsHoveredLocations(true);
-    };
-    const handleMouseLeaveLocations = () => {
-        setIsHoveredLocations(false);
-    };
-    const handleMouseEnterTemples = () => {
-        setIsHoveredTemples(true);
-    };
-    const handleMouseLeaveTemples = () => {
-        setIsHoveredTemples(false);
-    };
-    const handleMouseEnterFamous = () => {
-        setIsHoveredFamous(true);
-    };
-    const handleMouseLeaveFamous = () => {
-        setIsHoveredFamous(false);
-    };
 
     const ref1_2 = useRef(null);
     const ref3 = useRef(null);
-    const ref4 = useRef(null);
+    // const ref4 = useRef(null);
     // const ref5 = useRef(null);
     const refVehicle = useRef(null);
-    const refLocations = useRef(null);
-    const refTemples = useRef(null);
-    const refFamous = useRef(null);
 
     const handleClickOn1_2 = () => {
         ref1_2.current?.scrollIntoView({ behavior: 'smooth' });
@@ -108,37 +79,18 @@ const PhraeTransit = () => {
     const handleClickOn3 = () => {
         ref3.current?.scrollIntoView({ behavior: 'smooth' });
     };
-    const handleClickOn4 = () => {
-        ref4.current?.scrollIntoView({ behavior: 'smooth' });
-    };
+    // const handleClickOn4 = () => {
+    //     ref4.current?.scrollIntoView({ behavior: 'smooth' });
+    // };
     // const handleClickOn5 = () => {
     //     ref5.current?.scrollIntoView({ behavior: 'smooth' });
     // };
     const handleClickOnVehicle = () => {
         refVehicle.current?.scrollIntoView({ behavior: 'smooth' });
     };
-    const handleClickOnLocations = () => {
-        // history.push("/");
-        history.push("/locations");
-    };
-    const handleClickOnTemples = () => {
-        // history.push("/");
-        history.push("/temples");
-    };
-    const handleClickOnFamous = () => {
-        // history.push("/");
-        history.push("/famousThings");
-    };
 
     const motorcycles = routes_data.motorcycles.data
     const tricycles = routes_data.tricycles.data
-
-    // maps
-    const mapContainer_tram = useRef(null);
-    const map_tram = useRef(null);
-    let [lng_tram, setLng_tram] = useState(100.1425559);
-    let [lat_tram, setLat_tram] = useState(18.1417761);
-    const [zoom_tram, setZoom_tram] = useState(11);
 
     const mapContainer = useRef(null);
     const map = useRef(null);
@@ -177,22 +129,6 @@ const PhraeTransit = () => {
     };
     const [key, setRoute] = useState(getInitialStateRoute);
 
-    // tram
-    const handleChangeTramRoute = (e) => {
-        // if (types.includes(e.target.value)) {
-        //     setTramRoute('default');
-        // } else {
-        //     setTramRoute(e.target.value);
-        // }
-
-        setTramRoute(e.target.value);
-    };
-    const getInitialStateTramRoute = () => {
-        const tramValue = "";
-        return tramValue;
-    };
-    const [tramValue, setTramRoute] = useState(getInitialStateTramRoute);
-
 
     let route_lists = []
     let isHaveRobWiang = false
@@ -204,11 +140,10 @@ const PhraeTransit = () => {
     // let description_route = ""
     let time_service = []
 
-    // if (value === 'tram') {
-    //     route_lists = routes_data.tram
-    //     isHaveRobWiang = false
-    // } else 
-    if (value === 'trucktaxi1') {
+    if (value === 'tram') {
+        route_lists = routes_data.tram
+        isHaveRobWiang = false
+    } else if (value === 'trucktaxi1') {
         route_lists = routes_data.truckTaxi.sai1
         isHaveRobWiang = true
     } else if (value === 'trucktaxi4') {
@@ -218,24 +153,11 @@ const PhraeTransit = () => {
         route_lists = routes_data.default
     }
 
-    // if (key && key !== 'default' && value === 'tram') {
-    //     title_route = `เส้นทางเดินรถ ${route_lists.find(data => data.id === key).name}`;
-    //     // description_route = route_lists.find(data => data.id === key).description;
-    //     time_service = route_lists.find(data => data.id === key).time;
-    // } else 
-
-    let title_tramRoute = ""
-    let time_tramService = ""
-    let geojsonData_tram = []
-    const tram_list = routes_data.tram;
-    // if (tramValue !== 'default') {
-    if (tramValue.includes('tram')) {
-        title_tramRoute = `เส้นทางเดินรถ ${tram_list.find(data => data.id === tramValue).name}`;
-        time_tramService = tram_list.find(data => data.id === tramValue).time;
-        geojsonData_tram = tram_list.find(data => data.id === tramValue);
-    }
-
-    if (key && key !== 'default' && value === 'trucktaxi1') {
+    if (key && key !== 'default' && value === 'tram') {
+        title_route = `เส้นทางเดินรถ ${route_lists.find(data => data.id === key).name}`;
+        // description_route = route_lists.find(data => data.id === key).description;
+        time_service = route_lists.find(data => data.id === key).time;
+    } else if (key && key !== 'default' && value === 'trucktaxi1') {
         title_route = `เส้นทางเดินรถหมวดที่ 1 ${route_lists.find(data => data.id === key).name}`;
         // description_route = route_lists.find(data => data.id === key).description;
         time_service = route_lists.find(data => data.id === key).time;
@@ -267,64 +189,62 @@ const PhraeTransit = () => {
             showUserHeading: true
         }));
 
-        // if (key && key !== 'default' && value === 'tram') {
-        //     let count = 1
-        //     for (const feature of geojsonData.features) {
-        //         // make a marker for each feature and add to the map
-        //         const el = document.createElement('div');
-        //         el.className = styles[`trammarker${count}`]
-        //         // create the popup
-        //         const popup = new mapboxgl.Popup({ offset: 25 }).setText(feature.name);
-        //         new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).setPopup(popup).addTo(map.current);
-        //         count++
-        //     }
+        if (key && key !== 'default' && value === 'tram') {
+            let count = 1
+            for (const feature of geojsonData.features) {
+                // make a marker for each feature and add to the map
+                const el = document.createElement('div');
+                el.className = styles[`trammarker${count}`]
+                // create the popup
+                const popup = new mapboxgl.Popup({ offset: 25 }).setText(feature.name);
+                new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).setPopup(popup).addTo(map.current);
+                count++
+            }
 
-        //     map.current.on('load', () => {
-        //         map.current.addSource('route', {
-        //             'type': 'geojson',
-        //             'data': {
-        //                 'type': 'Feature',
-        //                 'properties': {
-        //                 },
-        //                 'geometry': {
-        //                     'type': 'LineString',
-        //                     'coordinates': geojsonData.routes
-        //                 }
-        //             }
-        //         });
-        //         map.current.addLayer({
-        //             'id': 'route',
-        //             'type': 'line',
-        //             'source': 'route',
-        //             'layout': {
-        //                 'line-join': 'round',
-        //                 'line-cap': 'round',
-        //             },
-        //             'paint': {
-        //                 'line-color': '#007ae0',
-        //                 'line-width': 8
-        //             }
-        //         })
+            map.current.on('load', () => {
+                map.current.addSource('route', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'Feature',
+                        'properties': {
+                        },
+                        'geometry': {
+                            'type': 'LineString',
+                            'coordinates': geojsonData.routes
+                        }
+                    }
+                });
+                map.current.addLayer({
+                    'id': 'route',
+                    'type': 'line',
+                    'source': 'route',
+                    'layout': {
+                        'line-join': 'round',
+                        'line-cap': 'round',
+                    },
+                    'paint': {
+                        'line-color': '#007ae0',
+                        'line-width': 8
+                    }
+                })
 
-        //         // Add a data source containing one point feature.
-        //         map.current.addSource('point', {
-        //             'type': 'geojson',
-        //             'data': {
-        //                 'type': 'Feature',
-        //                 'properties': {
-        //                 },
-        //                 'geometry': {
-        //                     'type': 'LineString',
-        //                     'coordinates': geojsonData.routes
-        //                 }
-        //             }
-        //         });
-        //         map.current.setZoom(14)
-        //     });
-        // }
-        // else
-
-        if (key && key !== 'default' && isHaveRobWiang === true) {
+                // Add a data source containing one point feature.
+                map.current.addSource('point', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'Feature',
+                        'properties': {
+                        },
+                        'geometry': {
+                            'type': 'LineString',
+                            'coordinates': geojsonData.routes
+                        }
+                    }
+                });
+                map.current.setZoom(14)
+            });
+        }
+        else if (key && key !== 'default' && isHaveRobWiang === true) {
             // geojsonData = route_lists.find(data => data.id === key);
             for (const feature of geojsonData.features) {
                 // make a marker for each feature and add to the map
@@ -463,102 +383,6 @@ const PhraeTransit = () => {
                 showUserHeading: true
             }));
         }
-
-
-        // if (map.current) return; // initialize map only once
-        map_tram.current = new mapboxgl.Map({
-            container: mapContainer_tram.current,
-            style: 'mapbox://styles/mapbox/streets-v12',
-            center: [lng_tram, lat_tram],
-            zoom: zoom_tram,
-            pan: {
-                animate: true,
-                duration: 2
-            }
-        });
-        map_tram.current.addControl(new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true
-            },
-            trackUserLocation: true,
-            showUserHeading: true
-        }));
-
-
-        if (tramValue.includes('tram')) {
-            let count = 1
-            for (const feature of geojsonData_tram.features) {
-                // make a marker for each feature and add to the map
-                const el = document.createElement('div');
-                el.className = styles[`trammarker${count}`]
-                // create the popup
-                const popup = new mapboxgl.Popup({ offset: 25 }).setText(feature.name);
-                new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).setPopup(popup).addTo(map_tram.current);
-                count++
-            }
-
-            map_tram.current.on('load', () => {
-                map_tram.current.addSource('route', {
-                    'type': 'geojson',
-                    'data': {
-                        'type': 'Feature',
-                        'properties': {
-                        },
-                        'geometry': {
-                            'type': 'LineString',
-                            'coordinates': geojsonData_tram.routes
-                        }
-                    }
-                });
-                map_tram.current.addLayer({
-                    'id': 'route',
-                    'type': 'line',
-                    'source': 'route',
-                    'layout': {
-                        'line-join': 'round',
-                        'line-cap': 'round',
-                    },
-                    'paint': {
-                        'line-color': '#007ae0',
-                        'line-width': 8
-                    }
-                })
-
-                // Add a data source containing one point feature.
-                map_tram.current.addSource('point', {
-                    'type': 'geojson',
-                    'data': {
-                        'type': 'Feature',
-                        'properties': {
-                        },
-                        'geometry': {
-                            'type': 'LineString',
-                            'coordinates': geojsonData_tram.routes
-                        }
-                    }
-                });
-                map_tram.current.setZoom(14)
-            });
-        } else {
-            map_tram.current = new mapboxgl.Map({
-                container: mapContainer.current,
-                style: 'mapbox://styles/mapbox/streets-v12',
-                center: [lng, lat],
-                zoom: zoom,
-                pan: {
-                    animate: true,
-                    duration: 2
-                }
-            });
-
-            map_tram.current.addControl(new mapboxgl.GeolocateControl({
-                positionOptions: {
-                    enableHighAccuracy: true
-                },
-                trackUserLocation: true,
-                showUserHeading: true
-            }));
-        }
     });
 
     return (
@@ -569,6 +393,12 @@ const PhraeTransit = () => {
                     <h1 className={styles.header_to}>to</h1>
                     <h1 className={styles.header_phrae}> PHRAE</h1>
                 </div>
+                {/* <div>
+                    <img className={styles.imgRoot} />
+                </div>
+                <div >
+                    <div className={styles.clipart}></div>
+                </div> */}
                 <div>
                     <div className={styles.div_choices_firstpage_odd}
                         onMouseEnter={handleMouseEnterVehicle}
@@ -601,7 +431,7 @@ const PhraeTransit = () => {
                     <div className={styles.div_choices_firstpage_even}
                         onMouseEnter={handleMouseEnterTouristAttraction}
                         onMouseLeave={handleMouseLeaveTouristAttraction}
-                        onClick={handleClickOnLocations}
+                    // onClick={handleClickOnVehicle}
                     >
                         {isHoveredTouristAttraction ?
                             <div className={styles.div_choices_firstpage_hover}>
@@ -619,7 +449,7 @@ const PhraeTransit = () => {
                                 </div>
                                 <div className={styles.choice_firstpage_Text} >
                                     <h1 className={styles.text_order}>2</h1>
-                                    <h1 className={styles.text_choice}>สถานที่ท่องเที่ยว</h1>
+                                    <h1 className={styles.text_choice}>สถานที่ท่องเที่ยว</h1>      
                                 </div>
                             </div>
                         }
@@ -629,7 +459,7 @@ const PhraeTransit = () => {
                         className={styles.div_choices_firstpage_odd}
                         onMouseEnter={handleMouseEnterRecLocation}
                         onMouseLeave={handleMouseLeaveRecLocation}
-                        onClick={handleClickOnFamous}
+                    // onClick={handleClickOnVehicle}
                     >
                         {isHoveredRecLocation ?
                             <div className={styles.div_choices_firstpage_hover}>
@@ -687,13 +517,25 @@ const PhraeTransit = () => {
                                 onMouseLeave={handleMouseLeave3}
                             >
                                 {isHovered3 ?
-                                    <div onClick={handleClickOn4} className={styles.typeHover}>
+                                    <div onClick={handleClickOn3} className={styles.typeHover}>
                                         <h4 className={styles.thai_font}>รถสองแถว</h4>
                                     </div> :
                                     <div className={styles.type3}></div>
                                 }
 
                             </div>
+                            {/* <div className={styles.type4}
+                                onMouseEnter={handleMouseEnter4}
+                                onMouseLeave={handleMouseLeave4}
+                            >
+                                {isHovered4 ?
+                                    <div onClick={handleClickOn4} className={styles.typeHover}>
+                                        <h4>รถตู้โดยสาร</h4>
+                                    </div> :
+                                    <div className={styles.type4}></div>
+                                }
+
+                            </div> */}
                             <div className={styles.type5}
                                 onMouseEnter={handleMouseEnter5}
                                 onMouseLeave={handleMouseLeave5}
@@ -754,70 +596,9 @@ const PhraeTransit = () => {
                     </div>
                 </div>
             </div >
-            <div ref={ref3} className={`${styles.darkBg}`} id='tram'>
+            <div ref={ref3} className={`${styles.darkBg}`} id='trucktaxi-and-tram'>
                 <div className={styles.trucktaxi_header}>
                     <h1 className={styles.thai_font}>เส้นทางการเดินรถ</h1>
-                    <h1 className={styles.thai_font}>รถรางนำเที่ยว</h1>
-                    {/* <h1>สองแถว</h1> */}
-                    <img className={styles.pics_trucktaxi} src={pics_tram} alt="" />
-                </div>
-                <div className={styles.selectonmap_div}>
-                    <div className={styles.select_div}>
-                        {/* <div className={styles.selection}>
-                            <label className={styles.select_label}>เลือกเส้นทางเดินรถ:</label>
-                            <select className={styles.selection} value={value} onChange={twoCalls}>
-                                <option value="default">-- เลือกเส้นทางเดินรถที่ต้องการ --</option>
-                                <option value="tram">รถรางนำเที่ยว</option>
-                                <option value="trucktaxi1">เส้นทางหมวดที่ 1 เทศบาลเมืองแพร่</option>
-                                <option value="trucktaxi4">เส้นทางหมวดที่ 4 นอกเทศบาลเมืองแพร่</option>
-                            </select>
-                        </div> */}
-                        <div className={styles.selection}>
-                            <label className={styles.select_label}>เลือกเส้นทางเดินรถ:</label>
-                            <select className={styles.selection} onChange={handleChangeTramRoute}>
-                                <option className={styles.thai_font} value="default">เลือกเส้นทางเดินรถที่ต้องการ</option>
-                                {tram_list.map((list) => (
-                                    <option className={styles.lists} value={list.id}> {list.name}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
-                    {/* <h6 className={`${styles.note}`}>{note}</h6> */}
-                </div>
-                <div className={styles.trucktaxi_map}>
-                    <div ref={mapContainer_tram} className={styles.mapcontainer} />
-                </div>
-                <h6 className={`${styles.note}`}>{note}</h6>
-                <div className={styles.description_div}>
-                    <h1 className={styles.description_title}>{title_tramRoute}</h1>
-                    <h1 className={styles.description_texttime}>เวลาที่ให้บริการ :</h1>
-                    <div>
-                        {time_tramService.length > 0 ? (
-                            <table className={styles.description_texttime}>
-                                <tbody>
-                                    {time_tramService.map((time, i) => (
-                                        <tr>
-                                            <td>{i + 1}.   {time}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        ) : time_tramService.length === 0 ? (
-                            <div className={styles.thai_font}>
-                                ไม่พบข้อมูลเส้นทางเดินรถที่ต้องการ
-                            </div>
-                        ) : (
-                            <div className={styles.thai_font}>
-                                ไม่พบข้อมูลเส้นทางการเดินรถกรุณาเลือกเส้นทางการเดินรถให้ถูกต้อง
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div >
-            <div ref={ref4} className={`${styles.lightBg}`} id='trucktaxi'>
-                <div className={styles.trucktaxi_header}>
-                    <h1 className={styles.thai_font}>เส้นทางการเดินรถ</h1>
-                    <h1 className={styles.thai_font}>รถสองแถว</h1>
                     {/* <h1>สองแถว</h1> */}
                     <img className={styles.pics_trucktaxi} src={trucktaxi} alt="" />
                 </div>
@@ -827,7 +608,7 @@ const PhraeTransit = () => {
                             <label className={styles.select_label}>เลือกเส้นทางเดินรถ:</label>
                             <select className={styles.selection} value={value} onChange={twoCalls}>
                                 <option value="default">-- เลือกเส้นทางเดินรถที่ต้องการ --</option>
-                                {/* <option value="tram">รถรางนำเที่ยว</option> */}
+                                <option value="tram">รถรางนำเที่ยว</option>
                                 <option value="trucktaxi1">เส้นทางหมวดที่ 1 เทศบาลเมืองแพร่</option>
                                 <option value="trucktaxi4">เส้นทางหมวดที่ 4 นอกเทศบาลเมืองแพร่</option>
                             </select>
@@ -843,6 +624,9 @@ const PhraeTransit = () => {
                         </div>
                     </div>
                     {/* <h6 className={`${styles.note}`}>{note}</h6> */}
+                </div>
+                <div className={styles.trucktaxi_map}>
+                    <div ref={mapContainer} className={styles.mapcontainer} />
                 </div>
                 <div className={styles.trucktaxi_map}>
                     <div ref={mapContainer} className={styles.mapcontainer} />
@@ -874,50 +658,8 @@ const PhraeTransit = () => {
                     </div>
                 </div>
             </div >
-
-            <div ref={refLocations} id='locations'
-                onMouseEnter={handleMouseEnterLocations}
-                onMouseLeave={handleMouseLeaveLocations}
-                onClick={handleClickOnLocations}
-            >
-                {isHoveredLocations ?
-                    <div onClick={handleClickOnLocations} className={styles.locationsBgHover}>
-                        <h1 className={styles.templateTextHover}>สถานที่ท่องเที่ยวเมืองแพร่</h1>
-                    </div> :
-                    <div className={styles.locationsBg}>
-                        <h1 className={styles.templateText}>สถานที่ท่องเที่ยวเมืองแพร่</h1>
-                    </div>
-                }
-            </div >
-            <div id='temples'
-                onMouseEnter={handleMouseEnterTemples}
-                onMouseLeave={handleMouseLeaveTemples}
-                onClick={handleClickOnTemples}
-            >
-                {isHoveredTemples ?
-                    <div onClick={handleClickOnTemples} className={styles.templesBgHover}>
-                        <h1 className={styles.templateTextHover}>วัด</h1>
-                    </div> :
-                    <div className={styles.templesBg}>
-                        <h1 className={styles.templateText}>วัด</h1>
-                    </div>
-                }
-            </div >
-            <div ref={refLocations} id='famousThings'
-                onMouseEnter={handleMouseEnterFamous}
-                onMouseLeave={handleMouseLeaveFamous}
-                onClick={handleClickOnFamous}>
-                {isHoveredFamous ?
-                    <div onClick={handleClickOnTemples} className={styles.famousThingsBgHover}>
-                        <h1 className={styles.templateTextHover}>ของดีเมืองแพร่</h1>
-                    </div> :
-                    <div className={styles.famousThingsBg}>
-                        <h1 className={styles.templateText}>ของดีเมืองแพร่</h1>
-                    </div>
-                }
-            </div >
         </div >
     )
 }
 
-export default PhraeTransit
+export default PhraeTransitxx

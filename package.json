@@ -9,6 +9,7 @@
     "@types/mapbox-gl": "^2.7.15",
     "globalthis": "^1.0.3",
     "mapbox-gl": "^2.15.0",
+    "mdb-react-ui-kit": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
@@ -37,10 +38,10 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not ie 11", 
-    "not chrome < 51", 
-    "not safari < 10", 
-    "not android < 51",
+      "not ie 11",
+      "not chrome < 51",
+      "not safari < 10",
+      "not android < 51",
       "not op_mini all"
     ],
     "development": [

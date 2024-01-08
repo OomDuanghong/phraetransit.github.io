@@ -302,6 +302,77 @@
     padding-bottom: 3rem;
 }
 
+.templateText {
+    text-align: center;
+    font-family: 'Noto Sans Thai', sans-serif;
+    /* font-family: 'PT Serif', serif; */
+    font-weight: 600;
+    font-size: 55px;
+    color: rgba(7, 7, 7, 0.5);
+    padding-top: 5rem;
+}
+
+.templateTextHover {
+    text-align: center;
+    font-family: 'Noto Sans Thai', sans-serif;
+    /* font-family: 'PT Serif', serif; */
+    font-weight: 600;
+    font-size: 55px;
+    color: rgb(251, 251, 247);
+    padding-top: 5rem;
+}
+
+.templesBg {
+    background-image: url('/src/images/choHae.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.famousThingsBg {
+    background-image: url('/src/images/morHom.avif');
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.locationsBg {
+    background-image: url('/src/images/paeMuangPee.webp');
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.templesBgHover {
+    background-image: url('/src/images/choHae.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+    background-repeat: no-repeat;
+}
+
+.famousThingsBgHover {
+    background-image: url('/src/images/morHom.avif');
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+    background-repeat: no-repeat;
+}
+
+.locationsBgHover {
+    background-image: url('/src/images/paeMuangPee.webp');
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+    background-repeat: no-repeat;
+}
+
 .motorcycle_header {
     background-color: rgb(201, 199, 199);
     background-size: 1700px;
@@ -501,6 +572,78 @@ ol {
 
 .trammarker7 {
     background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-07.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker8 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-08.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker9 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-09.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker10 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-10.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker11 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-11.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker12 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-12.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker13 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-13.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker14 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-14.jpg');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trammarker15 {
+    background-image: url('https://www.hellosummer.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/02/no-15.jpg');
     background-size: cover;
     width: 40px;
     height: 40px;
