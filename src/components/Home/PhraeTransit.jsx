@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { MDBRipple } from 'mdb-react-ui-kit'
 import { useHistory } from "react-router-dom";
 import styles from '../Home/PhraeTransit.module.css'
 import routes_data from '../../data/boardingPoint.json'
